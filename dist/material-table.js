@@ -251,15 +251,15 @@ var MaterialTable = /*#__PURE__*/ (function (_React$Component) {
     );
     (0, _defineProperty2.default)(
       (0, _assertThisInitialized2.default)(_this),
-      "onChangePage",
+      "onPageChange",
       function (event, page) {
         if (_this.isRemoteData()) {
           var query = (0, _objectSpread2.default)({}, _this.state.query);
           query.page = page;
 
           _this.onQueryChange(query, function () {
-            _this.props.onChangePage &&
-              _this.props.onChangePage(page, query.pageSize);
+            _this.props.onPageChange &&
+              _this.props.onPageChange(page, query.pageSize);
           });
         } else {
           if (!_this.isOutsidePageNumbers(_this.props)) {
@@ -267,8 +267,8 @@ var MaterialTable = /*#__PURE__*/ (function (_React$Component) {
           }
 
           _this.setState(_this.dataManager.getRenderState(), function () {
-            _this.props.onChangePage &&
-              _this.props.onChangePage(page, _this.state.pageSize);
+            _this.props.onPageChange &&
+              _this.props.onPageChange(page, _this.state.pageSize);
           });
         }
       }
@@ -281,7 +281,7 @@ var MaterialTable = /*#__PURE__*/ (function (_React$Component) {
 
         _this.dataManager.changePageSize(pageSize);
 
-        _this.props.onChangePage && _this.props.onChangePage(0, pageSize);
+        _this.props.onPageChange && _this.props.onPageChange(0, pageSize);
 
         if (_this.isRemoteData()) {
           var query = (0, _objectSpread2.default)({}, _this.state.query);
@@ -1104,7 +1104,7 @@ var MaterialTable = /*#__PURE__*/ (function (_React$Component) {
           : this.state.pageSize;
 
         if (count <= pageSize * currentPage && currentPage !== 0) {
-          this.onChangePage(null, Math.max(0, Math.ceil(count / pageSize) - 1));
+          this.onPageChange(null, Math.max(0, Math.ceil(count / pageSize) - 1));
         }
       },
     },
@@ -1398,7 +1398,7 @@ var MaterialTable = /*#__PURE__*/ (function (_React$Component) {
                   page: this.isRemoteData()
                     ? this.state.query.page
                     : currentPage,
-                  onChangePage: this.onChangePage,
+                  onPageChange: this.onPageChange,
                   onChangeRowsPerPage: this.onChangeRowsPerPage,
                   ActionsComponent: function ActionsComponent(subProps) {
                     return props.options.paginationType === "normal"

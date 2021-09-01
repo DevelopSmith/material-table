@@ -1,11 +1,28 @@
 import React from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import Icon from "@material-ui/core/Icon";
 import Paper from "@material-ui/core/Paper";
 import TablePagination from "@material-ui/core/TablePagination";
 import * as MComponents from "./components";
 import PropTypes from "prop-types";
 import { alpha } from "@material-ui/core/styles";
+
+import AddBox from "@material-ui/icons/AddBox";
+import ArrowDownward from "@material-ui/icons/ArrowDownward";
+import Check from "@material-ui/icons/Check";
+import ChevronLeft from "@material-ui/icons/ChevronLeft";
+import ChevronRight from "@material-ui/icons/ChevronRight";
+import Clear from "@material-ui/icons/Clear";
+import DeleteOutline from "@material-ui/icons/DeleteOutline";
+import Edit from "@material-ui/icons/Edit";
+import FilterList from "@material-ui/icons/FilterList";
+import FirstPage from "@material-ui/icons/FirstPage";
+import LastPage from "@material-ui/icons/LastPage";
+import Remove from "@material-ui/icons/Remove";
+import SaveAlt from "@material-ui/icons/SaveAlt";
+import Search from "@material-ui/icons/Search";
+import ViewColumn from "@material-ui/icons/ViewColumn";
+import DragHandle from "@material-ui/icons/DragHandle";
+import Replay from "@material-ui/icons/Replay";
 
 const OverlayLoading = (props) => (
   <div
@@ -94,105 +111,53 @@ export const defaultProps = {
   data: [],
   icons: {
     /* eslint-disable react/display-name */
-    Add: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        add_box
-      </Icon>
-    )),
-    Check: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        check
-      </Icon>
-    )),
-    Clear: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        clear
-      </Icon>
-    )),
+    Add: React.forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
+    Check: React.forwardRef((props, ref) => <Check {...props} ref={ref} />),
+    Clear: React.forwardRef((props, ref) => <Clear {...props} ref={ref} />),
     Delete: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        delete_outline
-      </Icon>
+      <DeleteOutline {...props} ref={ref} />
     )),
     DetailPanel: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        chevron_right
-      </Icon>
+      <ChevronRight {...props} ref={ref} />
     )),
-    Edit: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        edit
-      </Icon>
-    )),
-    Export: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        save_alt
-      </Icon>
-    )),
+    Edit: React.forwardRef((props, ref) => <Edit {...props} ref={ref} />),
+    Export: React.forwardRef((props, ref) => <SaveAlt {...props} ref={ref} />),
     Filter: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        filter_list
-      </Icon>
+      <FilterList {...props} ref={ref} />
     )),
     FirstPage: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        first_page
-      </Icon>
+      <FirstPage {...props} ref={ref} />
     )),
     LastPage: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        last_page
-      </Icon>
+      <LastPage {...props} ref={ref} />
     )),
     NextPage: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        chevron_right
-      </Icon>
+      <ChevronRight {...props} ref={ref} />
     )),
     PreviousPage: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        chevron_left
-      </Icon>
+      <ChevronLeft {...props} ref={ref} />
     )),
     ResetSearch: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        clear
-      </Icon>
+      <Clear {...props} ref={ref} />
     )),
     Resize: React.forwardRef((props, ref) => (
-      <Icon
+      <DragHandle
         {...props}
         ref={ref}
         style={{ ...props.style, transform: "rotate(90deg)" }}
-      >
-        drag_handle
-      </Icon>
+      />
     )),
-    Search: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        search
-      </Icon>
-    )),
+    Search: React.forwardRef((props, ref) => <Search {...props} ref={ref} />),
     SortArrow: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        arrow_downward
-      </Icon>
+      <ArrowDownward {...props} ref={ref} />
     )),
     ThirdStateCheck: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        remove
-      </Icon>
+      <Remove {...props} ref={ref} />
     )),
     ViewColumn: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        view_column
-      </Icon>
+      <ViewColumn {...props} ref={ref} />
     )),
-    Retry: React.forwardRef((props, ref) => (
-      <Icon {...props} ref={ref}>
-        replay
-      </Icon>
-    )),
+    Retry: React.forwardRef((props, ref) => <Replay {...props} ref={ref} />),
     /* eslint-enable react/display-name */
   },
   isLoading: false,
